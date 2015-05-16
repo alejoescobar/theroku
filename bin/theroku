@@ -1,0 +1,16 @@
+require "theroku/version"
+require 'docopt'
+require 'theroku'
+
+doc = <<DOCOPT
+Theroku.
+Usage:
+  theroku configure [-u USER] [-i IDENTITY_FILE] [--no-pg] HOST [NAME]
+  theroku [--app=NAME] run COMMAND...
+  theroku [--app=NAME] keys:upload PUBLIC_KEY_FILE
+  theroku [--app=NAME] vars
+  theroku [--app=NAME] vars:set VAR_NAME VAR_VALUE
+  theroku [--app=NAME] ps
+  theroku [--app=NAME] ps:add TYPE
+  theroku [--app=NAME] ps:remove TYPE
+  theroku [--app=NAME] ps:restart [TYPE]

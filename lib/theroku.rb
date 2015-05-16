@@ -1,7 +1,5 @@
 require "theroku/version"
 
 module Theroku
-  ARGV.each do |x|
-    puts x
-  end
+  # Your code goes here...
 end

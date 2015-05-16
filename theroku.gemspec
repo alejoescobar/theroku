@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Theroku::VERSION
   spec.authors       = ["alejoescobar"]
   spec.email         = ["alejoescobac@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = "Awesome Heroku load balancer."
+  spec.description   = "Gem to balance heroku servers."
   spec.homepage      = ""
   spec.license       = "MIT"
 
