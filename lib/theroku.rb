@@ -1,5 +1,2 @@
-require "theroku/version"
-
-module Theroku
-  # Your code goes here...
-end
+require 'theroku/create_command.rb'
+require 'theroku/destroy_command.rb'
