@@ -1,5 +1,7 @@
 class OpenCommand
-  def execute
-    #theroku open
+  require 'Launchy'
+  def execute(subdomain)
+    # Launchy.open( "http://#{subdomain}.therokubalance.com" )
+    Launchy.open("http://#{subdomain}.therokubalance.com")
   end
 end

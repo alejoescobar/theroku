@@ -1,17 +1,19 @@
-class CreateCommand
+class ListCommand
   require 'httparty'
-  def execute(url1, url2, subdomain)
+  def execute
     if File.exists?('.theroku')
-      puts "Creating #{subdomain}..."
+      puts "Listing all subdomains"
       file = File.open(".theroku", "rb")
       token = file.read
-      response = HTTParty.post("#{Theroku::base_url}apps",
-        body: { "url1" => "#{url1}", "url2" => "#{url2}", "subdomain" => "#{subdomain}" }.to_json,
+      response = HTTParty.get("#{Theroku::base_url}apps",
         headers: { 'Authorization' => "Token token=#{token}", 'Content-Type' => 'application/json', 'Accept' => 'application/json'}
       )
       if response.code == 200
-        puts "You succesfully created an application."
-        puts "You can now go to #{subdomain}.therokubalance.com or use theroku open!"
+        puts "These are your current subdomains:"
+        list_array = JSON.parse(response.body)
+        list_array.each do |app|
+          puts "app_name: #{app['subdomain']}, url1: #{app['url1']}, url2: #{app['url2']}"
+        end
       else
         puts "Sorry, something went wrong..."
       end

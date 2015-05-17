@@ -44,12 +44,19 @@ command :destroy do |c|
 end
 
 command :open do |c|
-  c.syntax = 'theroku open'
-  c.description = 'theroku open'
+  c.syntax = 'theroku open [args]'
+  c.description = 'theroku open <app_name>'
   c.action do |args, options|
-    CreateCommand.new.execute(*args)
+    OpenCommand.new.execute(*args)
   end
 end
 
+command :list do |c|
+  c.syntax = 'theroku list'
+  c.description = 'theroku list'
+  c.action do |args, options|
+    ListCommand.new.execute
+  end
+end
 
 end

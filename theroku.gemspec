@@ -5,7 +5,7 @@ require 'theroku/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "theroku"
-  spec.version       = "0.1.1"
+  spec.version       = "0.1.3"
   spec.authors       = ["alejoescobar", "simon0191", "jasmo2"]
   spec.email         = ["alejoescobac@gmail.com"]
   spec.summary       = "Awesome Heroku load balancer."
@@ -19,7 +19,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.bindir = 'bin'
   spec.add_development_dependency('rdoc', '4.2.0')
-  spec.add_runtime_dependency('docopt', '0.5.0')
+  spec.add_runtime_dependency('httparty', '0.13.3')
+  spec.add_runtime_dependency('commander', '4.3.4')
+  spec.add_runtime_dependency('launchy', '2.4.3')
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"

@@ -1,7 +1,6 @@
 class LoginCommand
   require 'httparty'
   def execute(email, password, token)
-    puts "Your email is #{email}, and your password is supposed to be hidden but fuck it here it is #{password}."
     puts "Initiating post method..."
     response = HTTParty.post("#{Theroku::base_url}login",
       body: { "email" => "#{email}", "password" => "#{password}" }.to_json,
