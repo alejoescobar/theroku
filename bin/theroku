@@ -4,21 +4,30 @@ require 'theroku'
 # :name is optional, otherwise uses the basename of this executable
 program :name, 'Theroku'
 program :version, '0.0.2'
-program :description, 'Awesome command that prints foo.'
+program :description, "Awesome gem that'll bring you to balance."
 
-command :create do |c|
-  c.syntax = 'theroku create [args]'
-  c.description = 'Create new Theroku application'
+command :login do |c|
+  c.syntax = 'theroku login'
+  c.description = 'Login into theroku awesome app.'
   c.action do |args, options|
-    CreateCommand.new.execute
+    name = ask("Email: ")
+    password = ask("Password:  ") { |q| q.echo = "*" }
+    LoginCommand.new.execute(name, password, "This is a temporal token")
   end
 end
 
-command :login do |c|
-  c.syntax = 'theroku login [options]'
-  c.description = 'Display bar with optional prefix and suffix'
+command :create do |c|
+  c.syntax = 'theroku create [args]'
+  c.description = 'theroku create <url_1> <url_2> <app_name>'
   c.action do |args, options|
-    name = ask("Name: ")
-    password = ask("Password:  ") { |q| q.echo = "*" }
+    CreateCommand.new.execute(*args)
+  end
+end
+
+command :destroy do |c|
+  c.syntax = 'theroku create [args]'
+  c.description = 'theroku destroy <app_name>'
+  c.action do |args, options|
+    CreateCommand.new.execute(*args)
   end
 end
