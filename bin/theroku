@@ -24,6 +24,17 @@ command :create do |c|
   end
 end
 
+command :update do |c|
+  c.syntax = 'theroku update [options]'
+  c.description = 'theroku update <old_app_name> --app_name <new_app_name> --url1 <new_url1> --url2 <new_url2>'
+  c.option '--app_name STRING', String, 'Changes the app_name'
+  c.option '--url1 STRING', String, 'Changes the url1'
+  c.option '--url2 STRING', String, 'Changes the url2'
+  c.action do |args, options|
+    UpdateCommand.new.execute(options.app_name, options.url1, options.url2)
+  end
+end
+
 command :destroy do |c|
   c.syntax = 'theroku create [args]'
   c.description = 'theroku destroy <app_name>'
