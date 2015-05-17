@@ -31,7 +31,8 @@ command :update do |c|
   c.option '--url1 STRING', String, 'Changes the url1'
   c.option '--url2 STRING', String, 'Changes the url2'
   c.action do |args, options|
-    UpdateCommand.new.execute(options.app_name, options.url1, options.url2)
+    p args
+    UpdateCommand.new.execute(options.app_name, options.url1, options.url2, args[0])
   end
 end
 

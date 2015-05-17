@@ -6,3 +6,4 @@ gemspec
 gem 'byebug'
 gem 'commander', '~> 4.3.4'
 gem 'httparty', '~> 0.13.3'
+gem 'launchy', '~> 2.4.3'

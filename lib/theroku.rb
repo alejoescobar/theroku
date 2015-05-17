@@ -1,5 +1,5 @@
 module Theroku
-  @base_url = 'http://192.168.0.18:3000/api/'
+  @base_url = 'http://therokubalance.com/api/'
   class << self
     attr_accessor :base_url
   end

@@ -10,7 +10,8 @@ class CreateCommand
         headers: { 'Authorization' => "Token token=#{token}", 'Content-Type' => 'application/json', 'Accept' => 'application/json'}
       )
       if response.code == 200
-        puts "Success!"
+        puts "You succesfully created an application."
+        puts "You can now go to #{subdomain}.therokuapp.com or use theroku open!"
       else
         puts "Sorry, something went wrong..."
       end
