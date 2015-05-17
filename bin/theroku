@@ -28,6 +28,6 @@ command :destroy do |c|
   c.syntax = 'theroku create [args]'
   c.description = 'theroku destroy <app_name>'
   c.action do |args, options|
-    CreateCommand.new.execute(*args)
+    DestroyCommand.new.execute(*args)
   end
 end
