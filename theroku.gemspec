@@ -5,7 +5,7 @@ require 'theroku/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "theroku"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["alejoescobar", "simon0191", "jasmo2"]
   spec.email         = ["alejoescobac@gmail.com"]
   spec.summary       = "Awesome Heroku load balancer."
